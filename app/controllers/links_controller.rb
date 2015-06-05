@@ -45,6 +45,7 @@ class LinksController < ActionController::Base
 	source_client = "client"
 	source_talent_pool_alert = "talent_pool_alert"
 	source_social = "social"
+	source_newsletter = "rework_newsletter"
 
 	medium_website = "website"
 	medium_email = "e-mail"
@@ -78,8 +79,13 @@ class LinksController < ActionController::Base
 
 	link_8 = original_url + "/?utm_source=" + source_social + "&utm_medium=" + medium_social_media + "&utm_content=" + content_any + "&utm_campaign=" + convert_campaign
 
+	link_9 = original_url + "/?utm_source=" + source_talent_pool_alert + "&utm_medium=" + medium_email + "&utm_content=" + content_any + "&utm_campaign=" + convert_campaign
+
+	link_10 = original_url + "/?utm_source=" + source_newsletter + "&utm_medium=" + medium_email + "&utm_content=" + content_any + "&utm_campaign=" + convert_campaign
+
+
 	array = []
-	array += [link_1, link_2, link_3, link_4, link_5, link_6, link_7, link_8]
+	array += [link_1, link_2, link_3, link_4, link_5, link_6, link_7, link_8, link_9, link_10]
 
 	short_array = array.map { |x| Bitly.client.shorten(x) }
 
