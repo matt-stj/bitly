@@ -76,8 +76,10 @@ class LinksController < ActionController::Base
 
 	link_7 = original_url + "/?utm_source=" + source_client + "&utm_medium=" + medium_any + "&utm_content=" + content_any + "&utm_campaign=" + convert_campaign
 
+	link_8 = original_url + "/?utm_source=" + source_social + "&utm_medium=" + medium_social_media + "&utm_content=" + content_any + "&utm_campaign=" + convert_campaign
+
 	array = []
-	array += [link_1, link_2, link_3, link_4, link_5, link_6, link_7]
+	array += [link_1, link_2, link_3, link_4, link_5, link_6, link_7, link_8]
 
 	short_array = array.map { |x| Bitly.client.shorten(x) }
 
@@ -91,7 +93,7 @@ class LinksController < ActionController::Base
     source_title = source_split[0]
     content_split = first_split[3].split("&")
     content_title = content_split[0]
-    full_descriptor = source_title + "/" + content_title
+    full_descriptor = source_title.capitalize + " / " + content_title.capitalize
     p full_descriptor
 
 

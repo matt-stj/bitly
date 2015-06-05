@@ -13,14 +13,14 @@
 	    <div class="row center">
 	        <div class="col-md-8 text-center bottom-margin">
 	          <div class="panel panel-default home">
-	            <div class="panel-heading" id="left"><h2>shorten links</h><div class="panel-image"> <%= image_tag("jobs.png", :alt => "image") %></div></div>
+	            <div class="panel-heading" id="left"><h2>Shorten Links</h2></div>
 	            <div class="panel-body center", id="centerpanels">
 	            	<form action="/shorten_links" method="get">
 						<h3>Page URL: <%= text_field_tag(:original_url) %> </h3>
 						<h3>Campaign <%= text_field_tag(:campaign) %> </h3>
 						<br>
 						<br>
-						<input type="submit" class="btn-primary" value="Shorten URL">
+						<input type="submit" class="btn-primary" value="Build Short URL's">
 					</form>
 	            </div>
 
