@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1 class="header">Here are your links for:</h1>
+
+</div>
+
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Full URL</th>
+      <th>Short URL</th>
+      <th>Clicks</th>    
+    </tr>
+    </thead>
+
+    <tbody>
+
+		<% @list_of_data.each do |x| %>
+			<tr>
+        <td><%= x["link_title"] %></td>
+				<td><a href = "<%= x['full_url'] %>"><%= x['full_url'] %></a></td>
+				<td><a href = "<%= x['shortened_url'] %>"><%= x['shortened_url'] %></a></td>
+        <td><%= x["clicks"] %></td>
+			</tr>
+		<% end %>
+
+    </tbody>
+  </table>

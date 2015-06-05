@@ -1,2 +1,28 @@
-<h1>Landings#index</h1>
-<p>Find me in app/views/landings/index.html.erb</p>
+<div class="jumbotron">
+	<h1 class="header">ReWork's Link Tagging Tool</h1>
+</div>
+
+<div class="box-container">
+	<div class="container clmns center">  
+	    <hr>
+
+	    <div class="row center">
+	        <div class="col-md-2 text-center">
+	        </div>
+
+	    <div class="row center">
+	        <div class="col-md-8 text-center bottom-margin">
+	          <div class="panel panel-default home">
+	            <div class="panel-heading" id="left"><h2>shorten links</h><div class="panel-image"> <%= image_tag("jobs.png", :alt => "image") %></div></div>
+	            <div class="panel-body center", id="centerpanels">
+	            	<form action="/shorten_links" method="get">
+						<h3>Page URL: <%= text_field_tag(:original_url) %> </h3>
+						<h3>Campaign <%= text_field_tag(:campaign) %> </h3>
+						<br>
+						<br>
+						<input type="submit" class="btn-primary" value="Shorten URL">
+					</form>
+	            </div>
+
+	          </div>
+	        </div>
