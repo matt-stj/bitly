@@ -52,4 +52,10 @@ gem 'tzinfo-data'
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'sqlite3'
+
 end
+
+group :production do
+  gem 'pg'
+end        
