@@ -1,0 +1,36 @@
+
+<div class="jumbotron">
+  <h1 class="header"><%= @campaign['name'] %></h1>
+
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>Short URL</th>
+      <th>Clicks</th>  
+      <th>Full URL</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+		<% @all_links.each do |x| %>
+			<tr>
+		        <td> <%= x['full_descriptor']%> </td>
+		        <td><a href = "<%= x['short_url'] %>"><%= x['short_url'] %></a></td>
+		        <td><%= x["our_clicks"] %></td>
+				<td><a href = "<%= x['long_url'] %>"><%= x['long_url'] %></a></td>
+			</tr>
+		<% end %>
+
+    </tbody>
+  </table>
+
+  
+
+<div class="jumbotron">
+  <a class="btn btn-default" href="/" role="button">Back</a>
+
+</div>

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604234052) do
+ActiveRecord::Schema.define(version: 20150611190314) do
+
+  create_table "bitly_links", force: true do |t|
+    t.string   "short_url"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bitly_links", ["campaign_id"], name: "index_bitly_links_on_campaign_id"
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -6,20 +6,14 @@ class LinksController < ActionController::Base
   layout "application"
 
   def save
-    @original_url = params[:original_url]
-    @campaign = params[:campaign]
   end
 
   def shorten_links
 
-  	require 'bitly'
-
-	Bitly.use_api_version_3
-
-	Bitly.configure do |config|
-	    config.api_version = 3
-	    config.access_token = "ffd5218474395ec84ab3e310a3c630deed442b4e"
-	end
+  	@original_url = params[:original_url]
+    name = @campaign = params[:campaign]
+    c = Campaign.create(:name => name, :url => @original_url)
+    Rails.logger.info c.inspect
 
 	p '# Saving URL'
     p params["original_url"]
@@ -100,12 +94,11 @@ class LinksController < ActionController::Base
     content_split = first_split[3].split("&")
     content_title = content_split[0]
     full_descriptor = source_title.capitalize + " / " + content_title.capitalize
-    p full_descriptor
-
 
     my_link_data["link_title"] = full_descriptor
     my_link_data["full_url"] = x.long_url
     my_link_data["shortened_url"] = x.short_url
+    BitlyLink.create(:campaign_id => c.id, :short_url => x.short_url)
     my_link_data["clicks"] = x.user_clicks
 
     @list_of_data.push my_link_data

@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+  get 'campaigns/show'
+
+  get 'campaign/(:id)', to:'campaigns#show_one'
+
+  get 'campaigns/update'
+
+  get 'bitly_links/show'
+
+  get 'bitly_link/(:id)', to:'bitly_links#show_one'
+
+  get 'bitly_links/update'
+
+  get 'bitly_links/delete'
+
   get 'landings/index'
+
+  resource :bitly_link
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.

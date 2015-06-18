@@ -26,3 +26,19 @@
 
 	          </div>
 	        </div>
+
+<div class="row">
+<%- @all_campaigns.each do |x| %>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><a href="/campaign/<%= x['id'] %>"> <%= x['name'] %></a></h3>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
+</div>
