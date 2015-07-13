@@ -2,5 +2,5 @@ Bitly.use_api_version_3
 
 Bitly.configure do |config|
     config.api_version = 3
-    config.access_token = "ffd5218474395ec84ab3e310a3c630deed442b4e"
+    config.access_token = "a2d8d958b089cb10ebfc8f94730dd66f04f199ac"
 end

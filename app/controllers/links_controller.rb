@@ -27,6 +27,14 @@ class LinksController < ActionController::Base
     	original_url.insert(0, "http://")
 	end
 
+	if original_url[-1, 1] == "/"
+		puts "URL already contains backslash as last character"
+	else
+		original_url.concat '/'
+	end
+
+	p original_url
+
 	p '# Saving Campaign'
 	p params["campaign"]
 	campaign = URI.escape params["campaign"]
