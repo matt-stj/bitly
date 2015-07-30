@@ -34,8 +34,8 @@
     <div class="thumbnail">
       <div class="caption">
         <h3><a href="/campaign/<%= x['id'] %>"> <%= x['name'] %></a></h3>
-        <p>Added on: <%= x['created_at'] %></p>
-        <%= link_to 'Delete',  @campaign,  method: :destroy, data: { confirm: 'Are you sure?' } %>
+        <p>Added on: <%= x['created_at'].to_s.split(" ")[0] %></p>
+        <a style="color: red;" onClick="return confirm('Are you sure?')" href="/campaign/delete/<%= x['id'] %>">Delete</a>
       </div>
     </div>
   </div>

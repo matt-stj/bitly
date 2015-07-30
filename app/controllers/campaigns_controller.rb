@@ -38,9 +38,9 @@ class CampaignsController < ApplicationController
   def update
   end
 
-    def destroy
-    @Campaign = Comment.find(params[:id])
-    @Campaign.destroy
-    redirect_to root
+  def destroy
+    @campaign = Campaign.find(params[:id])
+    @campaign.destroy
+    redirect_to root_path
   end
 end
